@@ -1,6 +1,6 @@
 # spyNet Cloud IP Camera
 
-### Allows to use your mobile device as an IP camera than can stream to the cloud.
+### Allows to use your mobile device as an IP camera than can stream to the cloud
 
 With *spyNet Camera* it is possible to use an Android device as a wireless IP camera.
 This way, it is possible to renew old smartphones and tablets, realizing your own video surveillance system easily, even on the WEB. 
@@ -27,3 +27,11 @@ It works with the WiFi or by using the mobile data connectivity.
 * interactive zoom and focus control
 * JSON API
 * no ads, no restrictions, absolutely for free
+
+### Get involved
+
+You are encouraged to verify the code, to propose changes or bug fixes and to translate the messages in your own language.
+
+### Disclaimer
+
+According to the GPL license, you are the welcome in browsing, downloading and editing the spyNet Camera source code, maybe to create your own version. Anyway, the only official version will be the one that can be downloaded from the Google Play Store. The author is not responsible of any other version that can be found on the WEB other that the official one.

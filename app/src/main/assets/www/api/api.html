@@ -1,0 +1,267 @@
+<!doctype html>
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>spyNet Camera API</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="center">
+  <h1>API</h1>
+  <div>
+    <p><em><strong>spyNet Camera</strong></em> implements an API that allows a better integration with clients or services.</p>
+  </div>
+  <div>
+    <h2>Status request</h2>
+    <div>
+      <p>It is possible to query the device for some internal status by sending a GET request to the server.
+        The result will be a JSON object containing all the related information.</p>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Status</h3>
+      <p><code>http://&lt;ipaddress&gt;:&lt;port&gt;/status</code></p>
+      <p>Returns the overall device's status.</p>
+      <p>Note: if the headers contain <i>gps-mode: fine</i> or <i>gps-mode: coarse</i>, the location mode will be changed accordingly.</p>
+      <dl>
+        <dt>
+          <p><code>location</code> (object) - the location object</p>
+        </dt>
+        <dd>
+          <dl>
+            <dt>
+              <p><code>latitude</code> (double) - the latitude, in degrees</p>
+            </dt>
+            <dt>
+              <p><code>longitude</code> (double) - the longitude, in degrees</p>
+            </dt>
+            <dt>
+              <p><code>time</code> (long) - the UTC time, in milliseconds since January 1, 1970.</p>
+            </dt>
+            <dt>
+              <p><code>accuracy</code> (float) - the estimated accuracy, in meters</p>
+            </dt>
+            <dt>
+              <p><code>provider</code> (string) - the name of the provider that generated the fix</p>
+            </dt>
+          </dl>
+        </dd>
+        <dt>
+          <p><code>connections</code> (array) - the list of active connections</p>
+        </dt>
+        <dd>
+          <dl>
+            <dt>
+              <p><code>client_address</code> (string) - the host name of the connected client or its IP address</p>
+            </dt>
+            <dt>
+              <p><code>MJPEG_stream</code> (boolean) - whether this client is streaming MJPEG video</p>
+            </dt>
+            <dt>
+              <p><code>H264_stream</code> (boolean) - whether this client is streaming H264 video</p>
+            </dt>
+            <dt>
+              <p><code>AAC_stream</code> (boolean) - whether this client is streaming AAC audio</p>
+            </dt>
+            <dt>
+              <p><code>RTSP_session_ID</code> (string) - the RTSP session ID, when streaming H264/AAC</p>
+            </dt>
+          </dl>
+        </dd>
+        <dt>
+          <p><code>streams</code> (int) - the number of active streams</p>
+        </dt>
+        <dt>
+          <p><code>WiFi</code> (boolean) - whether the WiFi is the active connection</p>
+        </dt>
+        <dt>
+          <p><code>mobile</code> (boolean) - whether the mobile data is the active connection</p>
+        </dt>
+        <dt>
+          <p><code>H264</code> (boolean) - whether the H264 video stream is available</p>
+        </dt>
+        <dt>
+          <p><code>audio</code> (boolean) - whether the AAC audio stream is available</p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Sensors</h3>
+      <p><code>http://&lt;ipaddress&gt;:&lt;port&gt;/sensors</code></p>
+      <p>Returns the sensors's status.</p>
+      <dl>
+        <dt>
+          <p><code>battery</code> (object) - the battery object</p>
+        </dt>
+        <dd>
+          <dl>
+            <dt>
+              <p><code>connection</code> (string) - the battery power source</p>
+            </dt>
+            <dt>
+              <p><code>level</code> (float) - the battery level</p>
+            </dt>
+          </dl>
+        </dd>
+        <dt>
+          <p><code>torch</code> (boolean) - whether the torch is turned on</p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Video and audio</h3>
+      <p><code>http://&lt;ipaddress&gt;:&lt;port&gt;/video</code></p>
+      <p><code>http://&lt;ipaddress&gt;:&lt;port&gt;/audio</code></p>
+      <p>The available video and audio sources.</p>
+      <dl>
+        <dt>
+          <p><code>streams</code> (array) - the list of available streams</p>
+        </dt>
+        <dd>
+          <dl>
+            <dt>
+              <p><code>url</code> (string) - the stream URL</p>
+            </dt>
+            <dt>
+              <p><code>mime</code> (string) - the MIME type</p>
+            </dt>
+            <dt>
+              <p><code>available</code> (boolean) - whether the stream is available</p>
+            </dt>
+            <dt>
+              <p><code>parameters</code> (array) - the list of the available query parameters, if any</p>
+            </dt>
+            <dd>
+              <dl>
+                <dt>
+                  <p><code>name</code> (string) - the name of the parameter</p>
+                </dt>
+                <dt>
+                  <p><code>min</code> (float) - the minimum value</p>
+                </dt>
+                <dt>
+                  <p><code>max</code> (float) - the maximum value</p>
+                </dt>
+              </dl>
+            </dd>
+          </dl>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div>
+    <h2>Control commands</h2>
+    <div>
+      <p>It is possible to control the app remotely by sending POST requests to the URL<br>
+        <code>http://&lt;ipaddress&gt;:&lt;port&gt;/control</code></p>
+      <p>The request's body should be plain text, specifying one or more commands to execute; 
+        the headers should contain <i>Content-Type: text/plain</i>.</p>
+      <p>Commands can be specified once per row, in the form <i>command=parameters</i>; 
+        rows may be either \n or \r\n terminated.</p>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Incremental zoom</h3>
+      <p><code>zoom=&lt;[+,-]delta&gt;</code></p>
+      <p>Increments or decrements the camera zoom.</p>
+      <dl>
+        <dt>
+          <p><code>delta</code> (int) - the desired zoom change, in percent</p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Absolute zoom</h3>
+      <p><code>zoom=&lt;magnification&gt;</code></p>
+      <p>Sets the camera zoom to the specified magnification factor.</p>
+      <dl>
+        <dt>
+          <p><code>magnification</code> (int) - the desired magnification, in 1/100x</p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Autofocus</h3>
+      <p><code>autofocus=&lt;x&gt;,&lt;y&gt;</code></p>
+      <p><code>autofocus=start</code></p>
+      <p>Performs both autofocus and light compensation.</p>
+      <dl>
+        <dt>
+          <p><code>x,y</code> (int,int) - the position of the focus/metering window, in uniform coordinates (-1000 to 1000)</p>
+          <p><code>"start"</code> - equals to <i>autofocus=0,0</i></p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Torch control</h3>
+      <p><code>torch=&lt;state&gt;</code></p>
+      <p>Control the torch associated to the active camera.</p>
+      <dl>
+        <dt>
+          <p><code>state</code> (string) - either <i>on</i>, <i>off</i> or <i>toggle</i></p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Video sync</h3>
+      <p><code>video-sync=send</code></p>
+      <p>Requests the transmission of an H264 IDR frame.</p>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>Delay</h3>
+      <p><code>delay=&lt;time&gt;</code></p>
+      <p>Waits for the specified time.</p>
+      <p>Can be used to synchronize other commands in the same request:<br>
+        <i>zoom=+200<br>
+        delay=250<br>
+        autofocus=start</i></p>
+      <dl>
+        <dt>
+          <p><code>time</code> (int) - time to wait, in milliseconds</p>
+        </dt>
+      </dl>
+    </div>
+    <br>
+    <div class="api_entry">
+      <h3>GPS Mode</h3>
+      <p><code>gps-mode=&lt;mode&gt;</code></p>
+      <p>Change the location update mode.</p>
+      <dl>
+        <dt>
+          <p><code>mode</code> (string) - either <i>fine</i> or <i>coarse</i></p>
+        </dt>
+      </dl>
+    </div>
+  </div>
+</div>
+</body>
+</html>

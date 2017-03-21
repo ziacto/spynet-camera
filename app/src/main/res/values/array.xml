@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<resources>
+    <string-array name="h264_resolutions" translatable="false">
+        <item>"64"</item>
+        <item>"128"</item>
+        <item>"256"</item>
+        <item>"384"</item>
+        <item>"512"</item>
+        <item>"768"</item>
+        <item>"1024"</item>
+        <item>"1536"</item>
+        <item>"2048"</item>
+        <item>"3072"</item>
+        <item>"4096"</item>
+        <item>"6144"</item>
+        <item>"8192"</item>
+    </string-array>
+    <string-array name="h264_speeds" translatable="false">
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+    </string-array>
+    <string-array name="h264_i_distances" translatable="false">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+    </string-array>
+    <string-array name="aac_resolutions" translatable="false">
+        <item>"32"</item>
+        <item>"64"</item>
+        <item>"128"</item>
+        <item>"256"</item>
+    </string-array>
+    <string-array name="aac_gain_values" translatable="false">
+        <item>"-6"</item>
+        <item>"0"</item>
+        <item>"6"</item>
+        <item>"12"</item>
+        <item>"18"</item>
+        <item>"24"</item>
+    </string-array>
+    <string-array name="aac_gain_entries" translatable="false">
+        <item>"-6"</item>
+        <item>"0"</item>
+        <item>"+6"</item>
+        <item>"+12"</item>
+        <item>"+18"</item>
+        <item>"+24"</item>
+    </string-array>
+    <string-array name="mjpeg_qualities" translatable="false">
+        <item>"25"</item>
+        <item>"50"</item>
+        <item>"75"</item>
+        <item>"100"</item>
+    </string-array>
+    <string-array name="mjpeg_speeds" translatable="false">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"20"</item>
+        <item>"25"</item>
+        <item>"30"</item>
+    </string-array>
+    <string-array name="ddns_service_entries" translatable="false">
+        <item>"No-IP (www.noip.com)"</item>
+        <item>"Dynu (www.dynu.com)"</item>
+        <item>"DNSdynamic (www.dnsdynamic.org)"</item>
+        <item>"FreeDNS (freedns.afraid.org)"</item>
+        <item>"Duck DNS (www.duckdns.org/)"</item>
+    </string-array>
+    <string-array name="ddns_service_values" translatable="false">
+        <item>"noip"</item>
+        <item>"dynu"</item>
+        <item>"dnsdynamic"</item>
+        <item>"freedns"</item>
+        <item>"duckdns"</item>
+    </string-array>
+    <string-array name="ddns_update_network_entries">
+        <item>"WiFi only"</item>
+        <item>"Mobile only"</item>
+        <item>"WiFi and mobile"</item>
+    </string-array>
+    <string-array name="ddns_update_network_values" translatable="false">
+        <item>"wifi"</item>
+        <item>"mobile"</item>
+        <item>"all"</item>
+    </string-array>
+</resources>

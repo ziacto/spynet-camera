@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>spyNet Camera</title>
+<link rel="icon" type="image/png" href="images/favicon.png"/>
+<link rel="stylesheet" type="text/css" href="styles.css"/>
+<style type="text/css"></style>
+</head>
+<body>
+<script src="spynet.js"></script> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2SSnwD8miArDyG4l7zyRCDn-qcG3zx4M&callback=initMap" async defer></script> 
+<!-- HEADER -->
+<div id="wrapper">
+  <div id="header">
+    <div id="top_links_wrap">
+      <ul>
+        <li> <a href="https://play.google.com/store/apps/details?id=com.spynet.camtest" 
+					target="_blank">Google Play</a> | </li>
+        <li> <a href="mailto:spynet314@gmail.com" 
+					target="_blank">Contact</a> | </li>
+        <li> <a href="api/api.html" 
+					target="_blank">API</a> </li>
+      </ul>
+    </div>
+    <div id="logo_area">
+      <div id="logo"> <a href="https://play.google.com/store/apps/details?id=com.spynet.camtest" target="_blank"> <img alt="Company Logo" src="images/logo.gif"
+                         width="128" height="128" style="border-width: 0px"/> </a> </div>
+      <div id="company_name">
+        <h2>spyNet Camera</h2>
+      </div>
+    </div>
+  </div>
+  <div id="menu_wrapper">
+    <div id="menu_area">
+      <div id="menu_items">
+        <div id="live" class="active_menu_item"><a href="#" onclick="navigate('live')">Live</a></div>
+        <div id="map" class="other_menu_item"><a href="#" onclick="navigate('map')">Map</a></div>
+        <div id="sensors" class="other_menu_item">Sensors</div>
+      </div>
+    </div>
+    <div id="blue_empty">
+      <div class="right_status" />
+      <img id="wifimjpeg" alt="WiFi MJPEG" src="images/wifi_none.png"/> 
+      <img id="wifih264" alt="WiFi H264" src="images/wifi_none.png"/> 
+      <script> getStreams(); </script> 
+      <img id="torch" alt="Torch" src="images/torch_none.png"/> 
+      <img id="battery" alt="battery" align="right" src="images/battery_none.png"/> 
+      <script> getSensors(); </script> 
+    </div>
+  </div>
+</div>
+<!-- CONTENT -->
+<div id="content_wrapper"> 
+  <!-- TIPS -->
+  <div class="right_content"> 
+    <!-- TINYCAM --> 
+    <a href="http://www.tinycammonitor.com/" target="_blank"> <img alt="tinyCam" src="images/tinycam.png"/></a>
+    <p><a href="http://www.tinycammonitor.com/" target="_blank">tinyCam Monitor</a> is probably the best app for remote surveillance, control and digital video recording for your private or public network or IP cameras, video encoders and DVRs.</p>
+    <p>It integrates <i>spyNet Camera</i> support and makes configuration easy.</p>
+    <hr/>
+    <!-- ANGELCAM --> 
+    <a href="https://www.angelcam.com/" target="_blank"> <img alt="angelcam" src="images/angelcam.png"/></a>
+    <p><a href="https://www.angelcam.com/" target="_blank">Angelcam</a> offers a plug and play, cloud based, secure, network camera streaming solution with interesting connected services.</p>
+    <p>The <i>Angelcam Ready</i> adapter makes configuring the camera a very easy task. No router configuration needed. <a href="https://help.angelcam.com/hc/en-us/articles/212022629-Android-Mobile-Apps/">Read more.</a></p>
+    <p>There are many plans that you can join, even for free! Check <a href="https://www.angelcam.com/pricing" target="_blank">Pricing</a> for more details.</p>
+    <hr/>
+    <!-- MANGOCAM --> 
+    <a href="https://www.mangocam.com/" target="_blank"> <img alt="Mangocam" src="images/mangocam.png"/></a>
+    <p><a href="https://www.mangocam.com/" target="_blank">Mangocam</a> offers IP camera recording, alerting and hosting.</p>
+    <p>There is a <a href="https://www.mangocam.com/pricing/personal-plans/" target="_blank">Free Plan</a> and many other options. Check the <a href="https://www.mangocam.com/help/" target="_blank">Help</a> page to have instructions.</p>
+    <p>Please use <i>spyNet (Android app)</i> as the camera profile, if you wish to try this service.</p>
+    <p>Use the discount token &quot;spynet&quot; to get 10% off all plans.</p>
+    <hr/>
+    <!-- VLC --> 
+    <a href="http://www.videolan.org/vlc/" target="_blank"> <img alt="VLC" src="images/vlc.png"/> <img alt="VideoLAN" src="images/videolan.png"/></a>
+    <p>For a better experience, use <a href="http://www.videolan.org/vlc" target="_blank">VLC media player</a> to stream hi-quality video from your device.</p>
+    <p>For details on how to setup the media player, check <a href="https://wiki.videolan.org/Documentation:Open_Media/#Play_a_network_stream_.28WebRadio.2C_WebTV.2C_etc..29"
+		target="_blank">Play a network stream</a> in the VLC documentation.</p>
+    <p>As for the network URL, you can use <i><script>h264URL();</script></i></p>
+    <p><i>spyNet Camera</i> supports RTSP, RTP over RTSP and RTSP/RTP over HTTP. 
+      It is possible to choose these options from the VLC media player options.</p>
+  </div>
+  <!-- MAIN CONTENT -->
+  <div id="left_content"> 
+    <!-- TABS -->
+    <div class="image_container">
+      <div class="image_top">
+        <div class="tl"> </div>
+        <div class="t"> </div>
+        <div class="tr"> </div>
+      </div>
+      <div class="image_middle">
+        <div class="l"> </div>
+        <div id="image" class="image"> 
+          <script> navigate('live'); </script> 
+        </div>
+        <div class="r"> </div>
+      </div>
+      <div class="image_bottom">
+        <div class="bl"> </div>
+        <div class="b"> </div>
+        <div class="br"> </div>
+      </div>
+    </div>
+    <!-- INFOS -->
+    <h1>welcome to spynet camera</h1>
+    <p><b>The app that allow you to use your mobile device, either smartphone or tablet,
+      as an easy to use and versatile IP camera.</b></p>
+    <p><b>Reuse old devices as IP cameras to create your own customized video-surveillance	
+      system for free.</b></p>
+    <p><em>spyNet Camera</em> supports standard streaming protocols like MJPEG, RTSP, RTP
+      over RTSP and RTSP/RTP over HTTP. Can connect to many existing devices and services
+      like VCR, surveillance softwares and online cloud services. Allows to customize
+      many options, like the video resolution and quality. Uses the WiFi to stream the video over your local network or the mobile data connection to stream to the cloud from everywhere.</p>
+    <p>Use your creativity to find other ways to use this app to make your life simpler or
+      just for fun and let us know about your experience!<br/>
+      <a href="https://plus.google.com/u/1/communities/115122467422597252610" target="_blank"> <img alt="GooglePlus" src="images/GooglePlus.png" align="right"/></a></p>
+  </div>
+</div>
+<div id="footer">
+  <p>spyNet Camera © 1016 All rights reserved | Designed by PD</p>
+</div>
+</body>
+</html>

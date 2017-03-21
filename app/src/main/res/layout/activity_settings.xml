@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <com.github.stkent.amplify.prompt.DefaultLayoutPromptView
+        android:id="@+id/prompt_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:prompt_view_background_color="@color/colorPrimary"
+        app:prompt_view_button_corner_radius="4dp"
+        app:prompt_view_critical_feedback_question_negative_button_label="@string/prompt_critical_feedback_negative_label"
+        app:prompt_view_critical_feedback_question_positive_button_label="@string/prompt_critical_feedback_positive_label"
+        app:prompt_view_critical_feedback_question_title="@string/prompt_critical_feedback_title"
+        app:prompt_view_positive_feedback_question_negative_button_label="@string/prompt_positive_feedback_negative_label"
+        app:prompt_view_positive_feedback_question_positive_button_label="@string/prompt_positive_feedback_positive_label"
+        app:prompt_view_positive_feedback_question_title="@string/prompt_positive_feedback_title"
+        app:prompt_view_thanks_display_time_ms="2000"
+        app:prompt_view_thanks_title="@string/prompt_thanks_title"
+        app:prompt_view_title_text_color="@color/colorAccent"
+        app:prompt_view_user_opinion_question_negative_button_label="@string/prompt_opinion_negative_label"
+        app:prompt_view_user_opinion_question_positive_button_label="@string/prompt_opinion_positive_label"
+        app:prompt_view_user_opinion_question_title="@string/prompt_opinion_title" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

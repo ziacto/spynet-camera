@@ -1,0 +1,109 @@
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/overlay_text_margin"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/resolutionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/overlay_text_margin"
+        android:shadowColor="@color/overlay_shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text=""
+        android:textColor="@color/overlay_text_color"
+        android:textSize="@dimen/overlay_text_size" />
+
+    <TextView
+        android:id="@+id/bitrateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/overlay_text_margin"
+        android:shadowColor="@color/overlay_shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text=""
+        android:textColor="@color/overlay_text_color"
+        android:textSize="@dimen/overlay_text_size" />
+
+    <TextView
+        android:id="@+id/zoomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/overlay_text_margin"
+        android:shadowColor="@color/overlay_shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text=""
+        android:textColor="@color/overlay_text_color"
+        android:textSize="@dimen/overlay_text_size" />
+
+    <TextView
+        android:id="@+id/fpsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/overlay_text_margin"
+        android:shadowColor="@color/overlay_shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text=""
+        android:textColor="@color/overlay_text_color"
+        android:textSize="@dimen/overlay_text_size" />
+
+    <TextView
+        android:id="@+id/addressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/overlay_text_margin"
+        android:shadowColor="@color/overlay_shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text=""
+        android:textColor="@color/overlay_text_color"
+        android:textSize="@dimen/overlay_text_size" />
+
+    <TextView
+        android:id="@+id/logText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/overlay_text_margin"
+        android:shadowColor="@color/overlay_shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text=""
+        android:textColor="@color/overlay_text_color"
+        android:textSize="@dimen/overlay_text_size"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_title_video">
+        <PreferenceScreen
+            android:icon="@drawable/ic_videocam"
+            android:key="preference_screen_camera"
+            android:persistent="false"
+            android:title="@string/pref_title_camera">
+            <ListPreference
+                android:defaultValue="0"
+                android:dialogTitle="@string/pref_camera_index_dlg"
+                android:key="pref_camera_index"
+                android:summary="@string/pref_camera_index_summ"
+                android:title="@string/pref_camera_index" />
+            <ListPreference
+                android:defaultValue="640x480"
+                android:dialogTitle="@string/pref_camera_resolution_dlg"
+                android:key="pref_video_resolution"
+                android:summary="@string/pref_camera_resolution_summ"
+                android:title="@string/pref_camera_resolution" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:icon="@drawable/ic_stream"
+            android:key="preference_screen_rtsp"
+            android:persistent="false"
+            android:title="@string/pref_title_rtsp">
+            <PreferenceCategory android:title="@string/pref_title_h264">
+                <ListPreference
+                    android:defaultValue="512"
+                    android:dialogTitle="@string/pref_video_quality_dlg"
+                    android:entries="@array/h264_resolutions"
+                    android:entryValues="@array/h264_resolutions"
+                    android:key="pref_video_quality_k"
+                    android:summary="@string/pref_video_quality_summ"
+                    android:title="@string/pref_video_quality" />
+                <ListPreference
+                    android:defaultValue="30"
+                    android:dialogTitle="@string/pref_video_fps_dlg"
+                    android:entries="@array/h264_speeds"
+                    android:entryValues="@array/h264_speeds"
+                    android:key="pref_video_fps"
+                    android:summary="@string/pref_video_fps_summ"
+                    android:title="@string/pref_video_fps" />
+                <ListPreference
+                    android:defaultValue="2"
+                    android:dialogTitle="@string/pref_video_i_distance_dlg"
+                    android:entries="@array/h264_i_distances"
+                    android:entryValues="@array/h264_i_distances"
+                    android:key="pref_video_i_distance"
+                    android:summary="@string/pref_video_i_distance_summ"
+                    android:title="@string/pref_video_i_distance" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/pref_title_aac">
+                <SwitchPreferenceCompat
+                    android:defaultValue="true"
+                    android:key="pref_audio_enabled"
+                    android:summary="@string/pref_audio_enabled_summ"
+                    android:title="@string/pref_audio_enabled" />
+                <ListPreference
+                    android:defaultValue="64"
+                    android:dependency="pref_audio_enabled"
+                    android:dialogTitle="@string/pref_audio_quality_dlg"
+                    android:entries="@array/aac_resolutions"
+                    android:entryValues="@array/aac_resolutions"
+                    android:key="pref_audio_quality_k"
+                    android:summary="@string/pref_audio_quality_summ"
+                    android:title="@string/pref_audio_quality" />
+                <ListPreference
+                    android:defaultValue="0"
+                    android:dependency="pref_audio_enabled"
+                    android:dialogTitle="@string/pref_audio_gain_dlg"
+                    android:entries="@array/aac_gain_entries"
+                    android:entryValues="@array/aac_gain_values"
+                    android:key="pref_audio_gain"
+                    android:summary="@string/pref_audio_gain_summ"
+                    android:title="@string/pref_audio_gain" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:icon="@drawable/ic_stream"
+            android:key="preference_screen_mjpeg"
+            android:persistent="false"
+            android:title="@string/pref_title_mjpeg">
+            <ListPreference
+                android:defaultValue="75"
+                android:dialogTitle="@string/pref_mjpeg_quality_dlg"
+                android:entries="@array/mjpeg_qualities"
+                android:entryValues="@array/mjpeg_qualities"
+                android:key="pref_mjpeg_quality"
+                android:summary="@string/pref_mjpeg_quality_summ"
+                android:title="@string/pref_mjpeg_quality" />
+            <ListPreference
+                android:defaultValue="25"
+                android:dialogTitle="@string/pref_mjpeg_fps_dlg"
+                android:entries="@array/mjpeg_speeds"
+                android:entryValues="@array/mjpeg_speeds"
+                android:key="pref_mjpeg_fps"
+                android:summary="@string/pref_mjpeg_fps_summ"
+                android:title="@string/pref_mjpeg_fps" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_server">
+        <PreferenceScreen
+            android:icon="@drawable/ic_network"
+            android:key="preference_screen_network"
+            android:persistent="false"
+            android:title="@string/pref_title_network">
+            <com.spynet.camera.ui.EditTextPreference
+                android:defaultValue="8080"
+                android:dialogTitle="@string/pref_server_port_dlg"
+                android:inputType="number"
+                android:key="pref_server_port"
+                android:summary="@string/pref_server_port_summ"
+                android:title="@string/pref_server_port" />
+            <SwitchPreferenceCompat
+                android:defaultValue="true"
+                android:key="pref_server_upnp"
+                android:summary="@string/pref_server_upnp_summ"
+                android:title="@string/pref_server_upnp" />
+            <SwitchPreferenceCompat
+                android:defaultValue="true"
+                android:key="pref_server_wifionly"
+                android:summary="@string/pref_server_wifionly_summ"
+                android:title="@string/pref_server_wifionly" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:icon="@drawable/ic_account"
+            android:key="preference_screen_authentication"
+            android:persistent="false"
+            android:title="@string/pref_title_authentication">
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:key="pref_server_authenticate"
+                android:title="@string/pref_server_authenticate" />
+            <com.spynet.camera.ui.EditTextPreference
+                android:defaultValue=""
+                android:dependency="pref_server_authenticate"
+                android:dialogTitle="@string/pref_server_username_dlg"
+                android:key="pref_server_username"
+                android:title="@string/pref_server_username" />
+            <com.spynet.camera.ui.EditTextPreference
+                android:defaultValue=""
+                android:dependency="pref_server_authenticate"
+                android:dialogTitle="@string/pref_server_password_dlg"
+                android:inputType="textPassword"
+                android:key="pref_server_password"
+                android:title="@string/pref_server_password" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:icon="@drawable/ic_dns"
+            android:key="preference_screen_ddns"
+            android:persistent="false"
+            android:title="@string/pref_title_ddns">
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:key="pref_server_update_ddns"
+                android:title="@string/pref_server_update_ddns" />
+            <ListPreference
+                android:defaultValue="noip"
+                android:dependency="pref_server_update_ddns"
+                android:dialogTitle="@string/pref_server_ddns_service_dlg"
+                android:entries="@array/ddns_service_entries"
+                android:entryValues="@array/ddns_service_values"
+                android:key="pref_server_ddns_service"
+                android:summary="@string/pref_server_ddns_service_summ"
+                android:title="@string/pref_server_ddns_service" />
+            <ListPreference
+                android:defaultValue="wifi"
+                android:dependency="pref_server_update_ddns"
+                android:dialogTitle="@string/pref_server_ddns_network_dlg"
+                android:entries="@array/ddns_update_network_entries"
+                android:entryValues="@array/ddns_update_network_values"
+                android:key="pref_server_ddns_network"
+                android:summary="@string/pref_server_ddns_network_summ"
+                android:title="@string/pref_server_ddns_network" />
+            <com.spynet.camera.ui.EditTextPreference
+                android:defaultValue=""
+                android:dependency="pref_server_update_ddns"
+                android:dialogTitle="@string/pref_server_ddns_hostname_dlg"
+                android:inputType="textUri"
+                android:key="pref_server_ddns_hostname"
+                android:summary="@string/pref_server_ddns_hostname_summ"
+                android:title="@string/pref_server_ddns_hostname" />
+            <com.spynet.camera.ui.EditTextPreference
+                android:defaultValue=""
+                android:dependency="pref_server_update_ddns"
+                android:dialogTitle="@string/pref_server_ddns_username_dlg"
+                android:key="pref_server_ddns_username"
+                android:title="@string/pref_server_ddns_username" />
+            <com.spynet.camera.ui.EditTextPreference
+                android:defaultValue=""
+                android:dependency="pref_server_update_ddns"
+                android:dialogTitle="@string/pref_server_ddns_password_dlg"
+                android:inputType="textPassword"
+                android:key="pref_server_ddns_password"
+                android:title="@string/pref_server_ddns_password" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:defaultValue=""
+                android:dependency="pref_server_update_ddns"
+                android:key="pref_server_ddns_last_update"
+                android:summary="@string/pref_server_ddns_last_update_summ"
+                android:title="@string/pref_server_ddns_last_update" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_adapters">
+        <PreferenceScreen
+            android:icon="@drawable/ic_cloud"
+            android:key="pref_screen_angelcam"
+            android:persistent="false"
+            android:title="@string/pref_title_angelcam">
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:key="pref_angel_enabled"
+                android:summary="@string/pref_angel_enabled_summ"
+                android:title="@string/pref_angel_enabled" />
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:dependency="pref_angel_enabled"
+                android:key="pref_angel_log"
+                android:summary="@string/pref_angel_log_summ"
+                android:title="@string/pref_angel_log" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:defaultValue="arr-rs.angelcam.com"
+                android:dependency="pref_angel_enabled"
+                android:dialogTitle="@string/pref_angel_host_dlg"
+                android:inputType="textUri"
+                android:key="pref_angel_host"
+                android:summary="@string/pref_angel_host_summ"
+                android:title="@string/pref_angel_host" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:defaultValue="8900"
+                android:dependency="pref_angel_enabled"
+                android:dialogTitle="@string/pref_angel_port_dlg"
+                android:inputType="number"
+                android:key="pref_angel_port"
+                android:summary="@string/pref_angel_port_summ"
+                android:title="@string/pref_angel_port" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:key="pref_angel_whatis"
+                android:title="@string/pref_angel_whatis" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:key="pref_angel_howto"
+                android:title="@string/pref_angel_howto" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:icon="@drawable/ic_cloud"
+            android:key="preference_screen_mangocam"
+            android:persistent="false"
+            android:title="@string/pref_title_mangocam">
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:key="pref_mango_enabled"
+                android:summary="@string/pref_mango_enabled_summ"
+                android:title="@string/pref_mango_enabled" />
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:dependency="pref_mango_enabled"
+                android:key="pref_mango_log"
+                android:summary="@string/pref_mango_log_summ"
+                android:title="@string/pref_mango_log" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:dependency="pref_mango_enabled"
+                android:key="pref_mango_reset"
+                android:persistent="false"
+                android:title="@string/pref_mango_reset" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:defaultValue="www.mangocam.com"
+                android:dependency="pref_mango_enabled"
+                android:dialogTitle="@string/pref_mango_host_dlg"
+                android:inputType="textUri"
+                android:key="pref_mango_host"
+                android:summary="@string/pref_mango_host_summ"
+                android:title="@string/pref_mango_host" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:defaultValue="8282"
+                android:dependency="pref_mango_enabled"
+                android:dialogTitle="@string/pref_mango_port_dlg"
+                android:inputType="number"
+                android:key="pref_mango_port"
+                android:summary="@string/pref_mango_port_summ"
+                android:title="@string/pref_mango_port" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:key="pref_mango_whatis"
+                android:title="@string/pref_mango_whatis" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_app">
+        <PreferenceScreen
+            android:icon="@drawable/ic_settings"
+            android:key="preference_screen_display"
+            android:persistent="false"
+            android:title="@string/pref_title_device">
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:key="pref_battery_optimization"
+                android:persistent="false"
+                android:title="@string/pref_battery_optimization" />
+            <SwitchPreferenceCompat
+                android:defaultValue="true"
+                android:key="pref_keep_screen_on"
+                android:summary="@string/pref_keep_screen_on_summ"
+                android:title="@string/pref_keep_screen_on" />
+            <SwitchPreferenceCompat
+                android:defaultValue="true"
+                android:key="pref_dim_screen"
+                android:summary="@string/pref_dim_screen_summ"
+                android:title="@string/pref_dim_screen" />
+            <SwitchPreferenceCompat
+                android:defaultValue="true"
+                android:key="pref_show_overlay"
+                android:summary="@string/pref_show_overlay_summ"
+                android:title="@string/pref_show_overlay" />
+            <SwitchPreferenceCompat
+                android:defaultValue="false"
+                android:key="pref_silent_notifications"
+                android:summary="@string/pref_silent_notifications_summ"
+                android:title="@string/pref_silent_notifications" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:icon="@drawable/ic_info"
+            android:key="preference_screen_about"
+            android:persistent="false"
+            android:title="@string/pref_title_infos">
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:key="pref_about_version"
+                android:summary="@string/pref_about_version_summ"
+                android:title="@string/pref_about_version" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:key="pref_about_url"
+                android:summary="@string/pref_about_url_summ"
+                android:title="@string/pref_about_url" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:icon="@drawable/ic_people"
+                android:key="pref_about_community"
+                android:title="@string/pref_about_community" />
+            <com.spynet.camera.ui.EditTextLockedPreference
+                android:icon="@drawable/ic_star"
+                android:key="pref_about_rate"
+                android:title="@string/pref_about_rate" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

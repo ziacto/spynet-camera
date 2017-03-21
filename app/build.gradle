@@ -1,0 +1,52 @@
+/*
+ * This file is part of spyNet Camera, the Android IP camera
+ *
+ * Copyright (C) 2016-2017 Paolo Dematteis
+ *
+ * spyNet Camera is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * spyNet Camera is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Paolo Dematteis - spynet314@gmail.com
+ */
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId "com.spynet.camtest"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 37
+        versionName '2.4.6'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'org.jetbrains:annotations:13.0'
+    compile 'com.takisoft.fix:preference-v7:25.2.0.0'
+    compile 'com.github.stkent:amplify:2.0.0'
+    compile 'org.bitlet:weupnp:0.1.4'
+}

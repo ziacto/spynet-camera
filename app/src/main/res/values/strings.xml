@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of spyNet Camera, the Android IP camera
+  ~
+  ~ Copyright (C) 2016-2017 Paolo Dematteis
+  ~
+  ~ spyNet Camera is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ spyNet Camera is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Paolo Dematteis - spynet314@gmail.com
+  -->
+
+<resources>
+    <string name="app_name" translatable="false">spyNet Camera</string>
+    <string name="app_service_name" translatable="false">spyNet Camera Service</string>
+    <string name="app_service_running">is running</string>
+    <string name="app_service_action_stop">Stop</string>
+    <string name="app_support_email" translatable="false">spynet314@gmail.com</string>
+    <string name="app_support_community" translatable="false">https://plus.google.com/u/1/communities/115122467422597252610</string>
+    <string name="msg_run_in_background">Do you want to continue streaming in background?</string>
+    <string name="msg_exit_slideshow">Touch the screen twice to exit the slideshow</string>
+    <string name="msg_no_image">There\'s no image to show</string>
+    <string name="error_show_url">Unable to show this URL</string>
+    <string name="error_market_app">Unable to find the market app</string>
+    <string name="error_browser_app">Unable to find the browser app</string>
+    <string name="error_invalid_range">%1$s range is %2$d to %3$d</string>
+    <string name="error_server_not_started">The server failed to start</string>
+    <string name="error_recorder_not_started">The recorder failed to start</string>
+    <string name="warning_camera_not_available">The camera is not available</string>
+    <string name="warning_h264_not_available">The H264 is not available</string>
+    <string name="warning_audio_not_available">The audio is not available</string>
+    <string name="warning_screen_capture_not_available">Screen Capture is not available</string>
+    <string name="warning_wifi_not_available">The WiFi is not enabled. Do you want to enable it now?</string>
+    <string name="warning_data_usage">By turning off this option, the mobile data connection may be used to stream.\nBe aware that this may consume too much data from your credit and may lead in extra cost, depending on your service provider.</string>
+    <string name="warning_data_enabled">Warning: streaming may use mobile data!</string>
+    <string name="warning_no_camera_permission">Access to the camera not allowed</string>
+    <string name="dialog_warning">Warning</string>
+    <string name="dialog_yes_button">Yes</string>
+    <string name="dialog_no_button">No</string>
+    <string name="dialog_ok_button">OK</string>
+    <string name="dialog_accept_button">Accept</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="dialog_now_button">Now</string>
+    <string name="dialog_later_button">Later</string>
+    <string name="dialog_permissions_title">Permission settings</string>
+    <string name="dialog_permissions_camera">Camera, to acquire the video.</string>
+    <string name="dialog_permissions_audio">Recorder, to acquire the audio.</string>
+    <string name="dialog_permissions_storage">Storage, to show the images during the slideshow.</string>
+    <string name="dialog_permissions_location">Location, for a better user experience on the home page.</string>
+    <string name="dialog_screen_capture_title">Screen Capture</string>
+    <string name="dialog_screen_capture_authorized">Screen Capture was authorized.\nDo you want to exit the app now?\nThe streaming will continue in the background.</string>
+    <string name="dialog_screen_capture_not_authorized">Screen Capture was not authorized.\nDo you want to exit the app now?</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="info_fps_unknown">Speed: detecting</string>
+    <string name="info_fps">Speed: %.1f fps</string>
+    <string name="info_ip_unavailable">The WiFi is not connected</string>
+    <string name="info_ip">Address: http://%1$s:%2$d</string>
+    <string name="info_resolution">Resolution: %1$dx%2$d</string>
+    <string name="info_bitrate">Bitrate: %1$d/%2$d kbps</string>
+    <string name="info_zoom">Zoom: %.1fx</string>
+    <string name="state_streaming">Streaming</string>
+    <string name="state_audio">Audio</string>
+    <string name="mango_notify_error_title">Mangocam error</string>
+    <string name="mango_notify_pin_title">Register on www.mangocam.com</string>
+    <string name="mango_notify_pin_text">Touch to complete (PIN %d)</string>
+    <string name="mango_notify_pin_description">Touch to complete the registration.\nAdd this device as a Cloud Camera using the PIN %d. The PIN has copied, you can paste it into the configuration form\'s field.</string>
+    <string name="mango_notify_connected_title">Connected to Mangocam</string>
+    <string name="mango_notify_sleeping_text" translatable="false">Disconnected, wait %d seconds</string>
+    <string name="mango_notify_sleeping_description" translatable="false">Disconnected, wait %1$d seconds.\n%2$s</string>
+    <string name="mango_log_connecting">Trying to connect to Mangocam host %s…</string>
+    <string name="mango_log_connected">Connected to Mangocam host %s</string>
+    <string name="mango_log_mjpeg_started">Start streaming MJPEG</string>
+    <string name="mango_log_mjpeg_stopped">Stop streaming MJPEG</string>
+    <string name="mango_log_connection_error">Connection error</string>
+    <string name="angel_notify_register_title">Register on www.angelcam.com</string>
+    <string name="angel_notify_register_text">MAC: %s</string>
+    <string name="angel_notify_register_description">Complete the registration from another device, you will be asked to acquire a QR code by using spyNet Camera.\nSelect \"Connect new camera\" and then \"Angelcam Ready Camera\"\nWhen asked, enter the MAC %s and follow the instructions.</string>
+    <string name="angel_notify_registered_title">Registered to Angelcam</string>
+    <string name="angel_notify_no_mac_title">MAC address non available</string>
+    <string name="angel_notify_no_mac_text">Tap to enable the WiFi</string>
+    <string name="angel_log_connecting">Connecting to Angelcam host %s…</string>
+    <string name="angel_log_connected">Connected to Angelcam host %s</string>
+    <string name="angel_log_connection_error">Connection error</string>
+    <string name="angel_log_session_start">Session started for service %d</string>
+    <string name="angel_log_session_stop">Session stopped for service %d</string>
+    <string name="pref_title">Preferences</string>
+    <string name="pref_title_video">VIDEO STREAM</string>
+    <string name="pref_title_camera">Camera</string>
+    <string name="pref_camera_index">Input device</string>
+    <string name="pref_camera_index_dlg">Select the input camera device</string>
+    <string name="pref_camera_index_summ">%s</string>
+    <string name="pref_camera_name">Camera %d</string>
+    <string name="pref_camera_back">back facing</string>
+    <string name="pref_camera_front">front facing</string>
+    <string name="pref_camera_name_screen_capture">Screen Capture</string>
+    <string name="pref_camera_resolution">Resolution</string>
+    <string name="pref_camera_resolution_dlg">Select the resolution</string>
+    <string name="pref_camera_resolution_summ">%s</string>
+    <string name="pref_title_rtsp">RTSP (H264/AAC)</string>
+    <string name="pref_title_h264">Video (H264)</string>
+    <string name="pref_video_quality">Quality</string>
+    <string name="pref_video_quality_dlg">Select the bitrate in kbps</string>
+    <string name="pref_video_quality_summ">%s kbps</string>
+    <string name="pref_video_fps">Speed</string>
+    <string name="pref_video_fps_dlg">Select the frames speed in fps</string>
+    <string name="pref_video_fps_summ">%s fps</string>
+    <string name="pref_video_i_distance">I-frame distance</string>
+    <string name="pref_video_i_distance_dlg">Select the reference frames distance in seconds</string>
+    <string name="pref_video_i_distance_summ">%s seconds</string>
+    <string name="pref_title_aac">Audio (AAC)</string>
+    <string name="pref_audio_enabled">Enabled</string>
+    <string name="pref_audio_enabled_summ">Send audio stream</string>
+    <string name="pref_audio_quality">Quality</string>
+    <string name="pref_audio_quality_dlg">Select the bitrate in kbps</string>
+    <string name="pref_audio_quality_summ">%s kbps</string>
+    <string name="pref_audio_gain">Gain</string>
+    <string name="pref_audio_gain_dlg">Select the gain in dB</string>
+    <string name="pref_audio_gain_summ">%s dB</string>
+    <string name="pref_title_mjpeg">MJPEG</string>
+    <string name="pref_mjpeg_quality">Quality</string>
+    <string name="pref_mjpeg_quality_dlg">Select the picture quality in %</string>
+    <string name="pref_mjpeg_quality_summ">%s%%</string>
+    <string name="pref_mjpeg_fps">Speed</string>
+    <string name="pref_mjpeg_fps_dlg">Select the frames speed in fps</string>
+    <string name="pref_mjpeg_fps_summ">%s fps</string>
+    <string name="pref_title_server">STREAM SERVER</string>
+    <string name="pref_title_network">Network</string>
+    <string name="pref_server_port">Port</string>
+    <string name="pref_server_port_dlg">Enter the embedded server port</string>
+    <string name="pref_server_port_summ">%s</string>
+    <string name="pref_server_upnp">Enable UPnP</string>
+    <string name="pref_server_upnp_summ">Set the port forwarding on the router</string>
+    <string name="pref_server_wifionly">WiFi only</string>
+    <string name="pref_server_wifionly_summ">Disallow streaming using the mobile data connection</string>
+    <string name="pref_title_authentication">Authentication</string>
+    <string name="pref_server_authenticate">Enable authentication</string>
+    <string name="pref_server_username">Username</string>
+    <string name="pref_server_username_dlg">Enter the username</string>
+    <string name="pref_server_password">Password</string>
+    <string name="pref_server_password_dlg">Enter the password</string>
+    <string name="pref_title_ddns">Dynamic DNS</string>
+    <string name="pref_server_update_ddns">Update DDNS periodically</string>
+    <string name="pref_server_ddns_service">DDNS Service Provider</string>
+    <string name="pref_server_ddns_service_dlg">Select the DDNS Service Provider</string>
+    <string name="pref_server_ddns_service_summ">%s</string>
+    <string name="pref_server_ddns_network">Network</string>
+    <string name="pref_server_ddns_network_dlg">Select the network to use</string>
+    <string name="pref_server_ddns_network_summ">%s</string>
+    <string name="pref_server_ddns_hostname">Hostname</string>
+    <string name="pref_server_ddns_hostname_dlg">Enter your public hostname</string>
+    <string name="pref_server_ddns_hostname_summ">%s</string>
+    <string name="pref_server_ddns_username">Username</string>
+    <string name="pref_server_ddns_username_dlg">Enter the DDNS service username</string>
+    <string name="pref_server_ddns_password">Password</string>
+    <string name="pref_server_ddns_password_dlg">Enter the DDNS service password</string>
+    <string name="pref_server_ddns_last_update">Last update</string>
+    <string name="pref_server_ddns_last_update_summ">%s</string>
+    <string name="pref_title_adapters">Adapters</string>
+    <string name="pref_title_angelcam">Angelcam Ready</string>
+    <string name="pref_angel_unsupported">This feature requires Android 5.0 or later</string>
+    <string name="pref_angel_enabled">Enable Angelcam Ready</string>
+    <string name="pref_angel_enabled_summ">Connect to the www.angelcam.com service</string>
+    <string name="pref_angel_host">Server</string>
+    <string name="pref_angel_host_dlg">Enter the Angelcam server name</string>
+    <string name="pref_angel_host_summ">%s</string>
+    <string name="pref_angel_port">Port</string>
+    <string name="pref_angel_port_dlg">Enter the Angelcam server port</string>
+    <string name="pref_angel_port_summ">%s</string>
+    <string name="pref_angel_log">Display log messages</string>
+    <string name="pref_angel_log_summ">Show connection information on the overlay</string>
+    <string name="pref_angel_whatis">What is?</string>
+    <string name="pref_angel_howto">How to configure?</string>
+    <string name="pref_title_mangocam">Mangocam Connect</string>
+    <string name="pref_mango_enabled">Enable Mangocam Connect</string>
+    <string name="pref_mango_enabled_summ">Connect to the www.mangocam.com service</string>
+    <string name="pref_mango_host">Server</string>
+    <string name="pref_mango_host_dlg">Enter the Mangocam server name</string>
+    <string name="pref_mango_host_summ">%s</string>
+    <string name="pref_mango_port">Port</string>
+    <string name="pref_mango_port_dlg">Enter the Mangocam server port</string>
+    <string name="pref_mango_port_summ">%s</string>
+    <string name="pref_mango_reset">Reset</string>
+    <string name="pref_mango_reset_dlg">Would you like to reset the device and generate a new PIN?</string>
+    <string name="pref_mango_log">Display log messages</string>
+    <string name="pref_mango_log_summ">Show connection information on the overlay</string>
+    <string name="pref_mango_whatis">What is?</string>
+    <string name="pref_title_app">APPLICATION</string>
+    <string name="pref_title_device">Device</string>
+    <string name="pref_battery_optimization">Battery optimization</string>
+    <string name="pref_battery_optimization_unsupported">This feature requires Android 6.0 or later</string>
+    <string name="pref_keep_screen_on">Always on</string>
+    <string name="pref_keep_screen_on_summ">Don\'t allow the device to enter the sleep mode</string>
+    <string name="pref_dim_screen">Discreet mode</string>
+    <string name="pref_dim_screen_summ">Hide the video after a while,\nplay a slideshow when using the front camera</string>
+    <string name="pref_show_overlay">Show overlay</string>
+    <string name="pref_show_overlay_summ">Display some useful information on the image</string>
+    <string name="pref_silent_notifications">Silent notifications</string>
+    <string name="pref_silent_notifications_summ">Do not play the sound when notifications are shown</string>
+    <string name="pref_title_infos">Information</string>
+    <string name="pref_about_version">Version</string>
+    <string name="pref_about_version_summ">%s</string>
+    <string name="pref_about_url">Local network addresses</string>
+    <string name="pref_about_url_summ">%s</string>
+    <string name="pref_about_url_none">None (no WiFi connection)</string>
+    <string name="pref_about_community">Community</string>
+    <string name="pref_about_rate">Rate this app</string>
+    <string name="prompt_opinion_title">Enjoying the app?</string>
+    <string name="prompt_opinion_positive_label">Yes!</string>
+    <string name="prompt_opinion_negative_label">No</string>
+    <string name="prompt_positive_feedback_title">Awesome! We\'d love a Play Store review…</string>
+    <string name="prompt_positive_feedback_positive_label">Sure thing!</string>
+    <string name="prompt_positive_feedback_negative_label">Not right now</string>
+    <string name="prompt_critical_feedback_title">Bummer. Would you like to send a feedback?</string>
+    <string name="prompt_critical_feedback_positive_label">Sure thing!</string>
+    <string name="prompt_critical_feedback_negative_label">Not right now</string>
+    <string name="prompt_thanks_title">Thanks for your feedback!</string>
+</resources>

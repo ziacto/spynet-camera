@@ -30,8 +30,11 @@ It works with the WiFi or by using the mobile data connectivity.
 
 ### Get involved
 
-You are encouraged to verify the code, to propose changes or bug fixes and to translate the messages in your own language.
+You are encouraged to verify the code, to propose changes or bug fixes 
+and to translate the messages in your own language.
 
 ### Disclaimer
 
-According to the GPL license, you are the welcome in browsing, downloading and editing the spyNet Camera source code, maybe to create your own version. Anyway, the only official version will be the one that can be downloaded from the Google Play Store. The author is not responsible of any other version that can be found on the WEB other that the official one.
+According to the GPL license, you are the welcome in browsing, downloading and editing the spyNet Camera source code, maybe to create your own version.
+Anyway, the only official version will be the one that can be downloaded from the Google Play Store.
+The author is not responsible of any other version other than the official one.
